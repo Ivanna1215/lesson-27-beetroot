@@ -94,68 +94,99 @@
 
 // console.log (room.sort());
 
+
+
+
+// Learn.js 
+// Task1
+let fruits = ['apple', 'orange', 'peach', 'cherry'];
+let shoppingCart = fruits;
+shoppingCart.push('Banana');
+// console.log(fruits);
+
+// Task2
+let room = ['bedroom', 'kitchen'];
+// console.log (room);
+room.push('bathroom');
+// console.log (room);
+room[Math.floor((room.length - 1) / 2)] = 'dining room';
+// room[1] = 'dining room';
+// console.log (room);
+// console.log (room.shift());
+room.unshift('living room', 'hall');
+// console.log (room);
+
+// Task 3
+
+let arr = ['a', 'b'];
+arr.push(function () {
+    console.log(this);
+})
+// console.log (arr[2]);
+
+
 // Task 1
 
-let listBuy = [
+let shoppingList = [
     { name: 'milk', amount: 2, status: 'notBuy' },
     { name: 'coffee', amount: 1, status: 'notBuy' },
     { name: 'meat', amount: 2, status: 'notBuy' },
     { name: 'apple', amount: 1, status: 'notBuy' },
     { name: 'cheese', amount: 2, status: 'notBuy' },
 ]
-// console.log(listBuy)
-
 let newObj = {
     name: 'sweets', amount: 2, status: 'notBuy',
 }
 
 let newObjTwo = {
-    name: 'apple', amount: 1, status: 'notBuy',
+    name: 'apple', amount: 3, status: 'notBuy',
 }
+console.log(shoppingList);
 
-function addBuy (obj,array){
-    for (let i = 1; i<array.length; i++) {
-        if (array[i].name===obj.name) {
-            // array[i].amount = array[i].amount + obj.amount;
-            array[i].amount++;
+function addBuy(array, obj) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].name === obj.name) {
+            array[i].amount = array[i].amount + obj.amount;
             return
         }
     }
-    console.log (listBuy);
+    array.push(obj);
+    // console.log (shoppingList);
+
+
 }
-addBuy (newObjTwo,listBuy)
-// let happyNum = [1, 2, 3, 9, 11, 22, 33,];
+
+addBuy(shoppingList, newObjTwo);
+console.log(shoppingList);
+addBuy(shoppingList, { name: 'meat', amount: 5, status: 'notBuy' });
+console.log(shoppingList);
+addBuy(shoppingList, newObj);
+console.log(shoppingList);
 
 
-// Learn.js 
-// Task1
-let fruits = ['apple','orange','peach','cherry'];
-let shoppingCart = fruits;
-shoppingCart.push('Banana');
-// console.log(fruits);
+function showStatus(array, name) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].name === name) {
+            array[i].status = 'isBuy';
+        }
+    }
+}
 
-// Task2
-let room = ['bedroom','kitchen'];
-// console.log (room);
-room.push('bathroom');
-// console.log (room);
-room [Math.floor((room.length-1)/2)] = 'dining room';
-// room[1] = 'dining room';
-// console.log (room);
-// console.log (room.shift());
-room.unshift ('living room','hall');
-// console.log (room);
+showStatus(shoppingList, 'meat');
+console.log(shoppingList);
+showStatus(shoppingList, 'sweets')
 
-// Task 3
+function showFiltr(array) {
+    // let notBuy = array.filter(function (item) {
+    //     return item = 'isBuy';
+    // })
+    let notBuy = (item) => 'notBuy';
 
-let arr = ['a','b'];
-arr.push (function(){
-    console.log (this);
-})
-// console.log (arr[2]);
+    let isBuy = array.filter(function (item) {
+        return item = 'notBuy';
+    })
+    console.log(notBuy);
+    console.log(isBuy);
+}
 
-
-
-
-
-
+showFiltr(shoppingList);
