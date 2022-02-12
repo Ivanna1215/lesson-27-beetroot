@@ -178,15 +178,39 @@ showStatus(shoppingList, 'sweets')
 
 function showFiltr(array) {
     // let notBuy = array.filter(function (item) {
-    //     return item = 'isBuy';
+    //     return item.status === 'notBuy';
     // })
-    let notBuy = (item) => 'notBuy';
+    let notBuy = array.filter(item => item.status === 'notBuy');
 
     let isBuy = array.filter(function (item) {
-        return item = 'notBuy';
+        return item.status === 'isBuy';
     })
-    console.log(notBuy);
-    console.log(isBuy);
+    console.log('not',notBuy);
+    console.log('is',isBuy);
 }
 
 showFiltr(shoppingList);
+
+// function declaration 
+
+declaration (3,6);
+expression (4,2)
+
+function declaration (a,b) {
+    return a+b;
+}
+
+// function  expression 
+const expression = function (a,b) {
+return a+b;
+}
+
+// arrow function full 
+const arrowFull =(a,b) => {
+    return (a+b);
+}
+
+// arrow function short 
+let func = (a,b) => a+b;
+
+
