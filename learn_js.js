@@ -14,7 +14,7 @@ function sumInput() {
 
     console.log('Summ', summ);
     console.log (arr);
-    alert('Summ', arr.summ);
+    alert(arr);
 
 }
 
