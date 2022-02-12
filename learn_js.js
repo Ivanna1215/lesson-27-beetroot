@@ -7,14 +7,13 @@ function sumInput() {
     for (let i = 1; ; i++) {
         question = +prompt('Input your number');
         if (!question) {break}
-        else {
             arr.push(question)
-        
+            summ = summ + question;
     }
-    }
-    summ += question;
+   
 
-    сonsole.log('Summ', +summ);
+    console.log('Summ', summ);
+    alert ('Summ',summ);
 
 }
 
