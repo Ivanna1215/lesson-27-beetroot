@@ -121,4 +121,22 @@ function getSortguarantie () {
      return  utensils.sort((a,b)=>b.guarantee-a.guarantee);
 
 }
-console.log (getSortguarantie ());
+// console.log (getSortguarantie ());
+
+// task 9
+
+function getAvereGuarantie () {
+    let spoon = {name:'spoon',guarantee:14,};
+    let knife = {name: 'knife',guarantee:20,};
+    let fork = {name:'fork',guarantee:16,};
+    let arr = [spoon,knife,fork];
+    let summ=0;
+    let res;
+    for (let i=0; i<arr.length; i++) {
+summ =summ + arr[i].guarantee;  
+    };
+    res = (Math.floor(summ/(arr.length)));
+console.log (summ);
+console.log (res);
+}
+getAvereGuarantie ();
